@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
     <title>Whack A Mole</title>
-</head>
-<body>
-<div id = "app">
-    <h1 class="SCORE">SCORE: <span>00</span></h1>
-    <div class="board">
-        <div class="hole"
-        v-for="hole in (holes)"
-        @click="randomize"
-        >         
-           <img v-show="hole.active" v-bind:src="hole.moleImage">
+  </head>
+  <body>
+    <div id="app">
+      <h1 class="SCORE">SCORE: <span>00</span></h1>
+      <div class="board">
+        <div class="hole" v-for="hole in (holes)" @click="randomize(holes)">
+          <img v-show="hole.active" v-bind:src="hole.moleImage" />
         </div>
+      </div>
     </div>
-
-</div>
-</body>
-<script src="./main.js"></script>
+  </body>
+  <script src="./main.js"></script>
 </html>
 <script>
-    const mountedApp = app.mount('#app')
+  const mountedApp = app.mount('#app');
 </script>
